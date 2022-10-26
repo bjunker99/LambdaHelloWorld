@@ -1,15 +1,12 @@
 name: .NET
 
 on:
-  workflow_dispatch:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    tags:
+    - '*'
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -34,3 +31,9 @@ jobs:
       
     - name: Archive project
       run: zip -j ./publish/LambdaHelloWorld.zip ./publish/LambdaHelloWorld/*
+
+    - uses: ncipollo/release-action@v1
+      with:
+        artifacts: ./publish/LambdaHelloWorld.zip
+        draft: true
+        token: ${{ secrets.YOUR_GITHUB_TOKEN }}
