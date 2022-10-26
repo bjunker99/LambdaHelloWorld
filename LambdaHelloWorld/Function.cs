@@ -16,7 +16,7 @@ public class Function
     /// <returns></returns>
     public string FunctionHandler(HelloWorldEvent input, ILambdaContext context)
     {
-        return $"{input.key1} -- {input.key2} -- {input.key3}";
+        return $"{input.key1} -- {input.key2} -- {input.key3}".ToUpper();
     }
 
     public class HelloWorldEvent
