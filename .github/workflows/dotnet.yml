@@ -33,4 +33,4 @@ jobs:
       run: dotnet publish -c Release --no-restore -o ./publish/LambdaHelloWorld
       
     - name: Archive project
-      run: zip -j ./publish/LambdaHelloWorld.zip ./publish/LambdaHelloWorld
+      run: zip -j ./publish/LambdaHelloWorld.zip ./publish/LambdaHelloWorld/*
