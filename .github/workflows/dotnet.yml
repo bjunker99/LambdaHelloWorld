@@ -27,7 +27,7 @@ jobs:
       run: dotnet build -c Release --no-restore
       
     - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test --no-restore --verbosity normal
       
     - name: Publish
-      run: dotnet publish -c Release -r linux-x64 --no-build -o ./publish/LambdaHelloWorld
+      run: dotnet publish -c Release -r linux-x64 --no-restore -o ./publish/LambdaHelloWorld
